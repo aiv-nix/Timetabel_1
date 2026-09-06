@@ -1,0 +1,135 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #0077ff, #ffd700); /* синьо-жовтий градієнт */
+  color: #333;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Заголовок */
+header {
+  background: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 24px; /* відступ під хедером */
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: #0044aa; /* синій */
+}
+
+/* Мобайл ферст */
+.timetable {
+  display: grid;
+  grid-template-columns: 1fr; /* мобілка: одна колонка */
+  gap: 24px; /* мінімальний відступ між картками */
+  padding: 0 10px; /* відступи по боках на мобілці */
+  justify-items: center;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  min-width: 270px;
+  max-width: 320px;
+}
+
+h2 {
+  margin-top: 0;
+  color: #0044aa; /* синій */
+}
+
+ul, ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin: 0.3rem 0;
+  padding: 0.4rem;
+  border: 2px solid #0077ff; /* синя рамка */
+  border-radius: 6px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+li:hover {
+  background: #fffacd; /* світло-жовтий при наведенні */
+}
+
+/* Дзвінки компактні */
+footer.bells {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 1rem;
+  text-align: center;
+  max-width: 400px;
+  margin: 1rem auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+footer.bells ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.current-lesson {
+  border: 2px solid #ffd700; /* жовта рамка */
+  background: #fff8dc; /* світло-жовтий фон */
+  font-weight: bold;
+}
+
+.upcoming-lesson {
+  border: 2px dashed #0077ff; /* синя рамка */
+  background: #e6f0ff; /* світло-синій фон */
+  animation: pulse 60s linear forwards;
+}
+
+@keyframes glow {
+  0%   { box-shadow: 0 0 5px rgba(173, 216, 230, 0.6); }
+  50%  { box-shadow: 0 0 20px rgba(173, 216, 230, 1); }
+  100% { box-shadow: 0 0 5px rgba(173, 216, 230, 0.6); }
+}
+
+.upcoming-lesson {
+  border: 2px dashed #0077ff;
+  background: #e6f0ff;
+  animation: glow 3s ease-in-out infinite; /* ніжно-голубе сяйво */
+}
+
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* --- Адаптивність --- */
+
+/* Планшет: 2 колонки */
+@media (min-width: 600px) {
+  .timetable {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 0 20px;
+  }
+}
+
+/* Десктоп: 3 колонки */
+@media (min-width: 1024px) {
+  .timetable {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    padding: 0 40px;
+  }
+}
